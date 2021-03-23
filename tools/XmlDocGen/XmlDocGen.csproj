@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ProjectName\ProjectName.csproj" />
+    <ProjectReference Include="..\..\src\Faithlife.DataAnnotations\Faithlife.DataAnnotations.csproj" />
   </ItemGroup>
 
   <ItemGroup>

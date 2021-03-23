@@ -1,8 +1,8 @@
-# ProjectName
+# Faithlife.DataAnnotations
 
-ProjectName class library.
+Faithlife.DataAnnotations class library.
 
-[![Build](https://github.com/Faithlife/RepoName/workflows/Build/badge.svg)](https://github.com/Faithlife/RepoName/actions?query=workflow%3ABuild) [![NuGet](https://img.shields.io/nuget/v/ProjectName.svg)](https://www.nuget.org/packages/ProjectName)
+[![Build](https://github.com/Faithlife/FaithlifeDataAnnotations/workflows/Build/badge.svg)](https://github.com/Faithlife/FaithlifeDataAnnotations/actions?query=workflow%3ABuild) [![NuGet](https://img.shields.io/nuget/v/Faithlife.DataAnnotations.svg)](https://www.nuget.org/packages/Faithlife.DataAnnotations)
 
-* [Documentation](https://faithlife.github.io/RepoName/)
+* [Documentation](https://faithlife.github.io/FaithlifeDataAnnotations/)
 * [Release Notes](ReleaseNotes.md)
