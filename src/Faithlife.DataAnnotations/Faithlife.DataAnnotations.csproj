@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Description>Faithlife.DataAnnotations class library.</Description>
-    <PackageTags></PackageTags>
+    <Description>Helpers for working with DataAnnotations from System.ComponentModel.</Description>
+    <PackageTags>data annotations</PackageTags>
     <IsPackable>true</IsPackable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
