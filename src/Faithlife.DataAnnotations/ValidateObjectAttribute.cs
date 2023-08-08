@@ -21,6 +21,6 @@ public sealed class ValidateObjectAttribute : ValidationAttribute
 		var innerErrorMessage = string.Join(" ", validationResults.Select(x => x.ErrorMessage).Where(x => x is not null));
 		return new ValidationResult(
 			errorMessage: $"{FormatErrorMessage(validationContext.DisplayName)}{(innerErrorMessage.Length == 0 ? "" : $" ({innerErrorMessage})")}",
-			memberNames: validationContext.MemberName is string memberName ? new[] { memberName } : null);
+			memberNames: validationContext.MemberName is { } memberName ? new[] { memberName } : null);
 	}
 }

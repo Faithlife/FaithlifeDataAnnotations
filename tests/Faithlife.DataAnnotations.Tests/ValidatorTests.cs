@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace Faithlife.DataAnnotations.Tests;
 
-public class ValidatorTests
+public sealed class ValidatorTests
 {
 	[Test]
 	public void ValidateNull()
