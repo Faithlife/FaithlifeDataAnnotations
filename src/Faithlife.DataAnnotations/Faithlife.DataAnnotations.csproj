@@ -5,7 +5,6 @@
     <Description>Helpers for working with DataAnnotations from System.ComponentModel.</Description>
     <PackageTags>data annotations</PackageTags>
     <IsPackable>true</IsPackable>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
