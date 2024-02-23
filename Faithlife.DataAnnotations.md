@@ -4,6 +4,7 @@
 
 | public type | description |
 | --- | --- |
+| class [ValidateItemsAttribute](./Faithlife.DataAnnotations/ValidateItemsAttribute.md) | Used to validate a collection property whose items have their own properties with data annotations. |
 | class [ValidateObjectAttribute](./Faithlife.DataAnnotations/ValidateObjectAttribute.md) | Used to validate a property whose type has its own properties with data annotations. |
 | static class [ValidatorUtility](./Faithlife.DataAnnotations/ValidatorUtility.md) | Helper methods for using Validator. |
 
