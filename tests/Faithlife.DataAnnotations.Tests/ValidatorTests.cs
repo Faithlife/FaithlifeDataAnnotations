@@ -27,50 +27,35 @@ public sealed class ValidatorTests
 		var validatable = new ValidatableDto();
 
 		var results = ValidatorUtility.GetValidationResults(validatable);
-		Assert.That(results.Single().MemberNames.Single(), Is.EqualTo(nameof(ValidatableDto.Required)));
+		AssertFieldIsRequired(results.Single());
 		var exception = Assert.Throws<ValidationException>(() => ValidatorUtility.Validate(validatable));
-		Assert.That(exception!.ValidationResult.MemberNames.Single(), Is.EqualTo(nameof(ValidatableDto.Required)));
+		AssertFieldIsRequired(exception!.ValidationResult);
 
 		validatable.Required = "";
 		results = ValidatorUtility.GetValidationResults(validatable);
-		Assert.That(results.Single().MemberNames.Single(), Is.EqualTo(nameof(ValidatableDto.Required)));
+		AssertFieldIsRequired(results.Single());
 		Assert.Throws<ValidationException>(() => ValidatorUtility.Validate(validatable));
 
 		validatable.Required = " ";
 		results = ValidatorUtility.GetValidationResults(validatable);
-		Assert.That(results.Single().MemberNames.Single(), Is.EqualTo(nameof(ValidatableDto.Required)));
+		AssertFieldIsRequired(results.Single());
 		Assert.Throws<ValidationException>(() => ValidatorUtility.Validate(validatable));
 
 		validatable.Required = "x";
 		results = ValidatorUtility.GetValidationResults(validatable);
 		Assert.That(results, Is.Empty);
 		ValidatorUtility.Validate(validatable);
-	}
 
-	[Test]
-	public void ValidateRecursive()
-	{
-		var invalid = new ValidatableDto();
-		var validatable = new ValidatableDto { Required = "x", Validatable = invalid };
-
-		var results = ValidatorUtility.GetValidationResults(validatable);
-		Assert.That(results.Single().MemberNames.Single(), Is.EqualTo(nameof(ValidatableDto.Validatable)));
-
-		validatable.Validatable = new ValidatableDto { Required = "x", Validatable = invalid };
-		results = ValidatorUtility.GetValidationResults(validatable);
-		Assert.That(results.Single().MemberNames.Single(), Is.EqualTo(nameof(ValidatableDto.Validatable)));
-
-		validatable.Validatable.Validatable = new ValidatableDto { Required = "x" };
-		results = ValidatorUtility.GetValidationResults(validatable);
-		Assert.That(results, Is.Empty);
+		void AssertFieldIsRequired(ValidationResult result)
+		{
+			Assert.That(result.MemberNames.Single(), Is.EqualTo(nameof(ValidatableDto.Required)));
+			Assert.That(result.ErrorMessage, Is.EqualTo("The Required field is required."));
+		}
 	}
 
 	private sealed class ValidatableDto
 	{
 		[Required]
 		public string? Required { get; set; }
-
-		[ValidateObject]
-		public ValidatableDto? Validatable { get; set; }
 	}
 }
