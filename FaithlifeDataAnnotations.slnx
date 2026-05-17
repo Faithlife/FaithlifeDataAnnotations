@@ -16,5 +16,4 @@
   <Project Path="src/Faithlife.DataAnnotations/Faithlife.DataAnnotations.csproj" />
   <Project Path="tests/Faithlife.DataAnnotations.Tests/Faithlife.DataAnnotations.Tests.csproj" />
   <Project Path="tools/Build/Build.csproj" />
-  <Project Path="tools/XmlDocGen/XmlDocGen.csproj" />
 </Solution>
