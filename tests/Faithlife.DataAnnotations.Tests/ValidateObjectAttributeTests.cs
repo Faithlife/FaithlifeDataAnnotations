@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace Faithlife.DataAnnotations.Tests;
 
-public sealed class ValidateObjectAttributeTests
+internal sealed class ValidateObjectAttributeTests
 {
 	[Test]
 	public void ValidateRecursive()
